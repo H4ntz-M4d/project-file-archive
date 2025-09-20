@@ -1,0 +1,49 @@
+version: '3.8'
+
+networks:
+  arsip-surat-network:
+
+volumes:
+  arsip-surat_data:
+
+services:
+  db:
+    container_name: arsip-surat-db
+    image: bitnami/mariadb:latest
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_USER=ince
+      - MARIADB_DATABASE=db-arsip-surat
+    ports:
+      - "3303:3306"
+    networks:
+      - arsip-surat-network
+    volumes:
+      - arsip-surat_data:/bitnami/mariadb
+
+  app:
+    container_name: arsip-surat-laravel
+    image: bitnami/laravel:latest
+    ports:
+      - "5005:8000"
+    environment:
+      - DB_HOST=arsip-surat-db
+      - DB_PORT=3306
+      - DB_USERNAME=ince
+      - DB_DATABASE=db-arsip-surat
+    networks:
+      - arsip-surat-network
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+
+  phpmyadmin:
+    container_name: arsip-surat-phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "5050:80"
+    environment:
+      - PMA_HOST=arsip-surat-db
+    networks:
+      - arsip-surat-network
