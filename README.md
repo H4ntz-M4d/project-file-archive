@@ -194,11 +194,12 @@ Proyek ini sudah memiliki konfigurasi **Docker** untuk memudahkan pengaturan lin
 
 ## 📷 Screenshot
 
-| Halaman      | Tampilan                                      |
-| ------------ | --------------------------------------------  |
-| View Arsip   | ![View Arsip](docs/screenshots/dashboard.png) |
-| Tambah Arsip | ![Tambah Arsip](docs/screenshots/upload.png)  |
-| Daftar Arsip | ![Daftar Arsip](docs/screenshots/list.png)    |
+| Halaman      | Tampilan                                            |
+| ------------ | --------------------------------------------------- |
+| Daftar Arsip | ![Daftar Arsip](docs/screenshots/daftar-arsip.png)  |
+| About Me     | ![About Me](docs/screenshots/about.png)             |
+| Tambah Arsip | ![Tambah Arsip](docs/screenshots/tambah-arsip.png)  |
+| View Arsip   | ![View Arsip](docs/screenshots/view-arsip.png)      |
 
 
 ---
